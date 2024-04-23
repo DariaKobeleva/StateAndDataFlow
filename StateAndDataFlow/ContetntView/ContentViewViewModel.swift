@@ -1,15 +1,15 @@
 //
-//  ContenttViewViewModel.swift
+//  ContentViewViewModel.swift
 //  StateAndDataFlow
 //
 //  Created by Дарья Кобелева on 22.04.2024.
 //
 
 import Foundation
-import Combine
+import Observation
 
-final class ContentViewViewModel: ObservableObject {
-    let objectWillChange = ObservableObjectPublisher()
+@Observable
+final class ContentViewViewModel {
     var counter = 3
     var buttonTittle = "Start"
     
@@ -36,8 +36,6 @@ final class ContentViewViewModel: ObservableObject {
             killTimer()
             buttonTittle = "Reset"
         }
-        
-        objectWillChange.send()
     }
     
     private func killTimer() {
@@ -52,8 +50,6 @@ final class ContentViewViewModel: ObservableObject {
         } else {
             buttonTittle = "Wait..."
         }
-        
-        objectWillChange.send()
     }
 }
 

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject private var contentViewVM: ContentViewViewModel
+    let contentViewVM: ContentViewViewModel
     @EnvironmentObject private var loginViewVM: LoginViewViewModel
     
     var body: some View {
@@ -31,13 +31,12 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
-        .environmentObject(ContentViewViewModel())
+    ContentView(contentViewVM: ContentViewViewModel())
         .environmentObject(LoginViewViewModel())
 }
 
 struct ButtonView: View {
-   @ObservedObject var contentViewVM: ContentViewViewModel
+   var contentViewVM: ContentViewViewModel
     
     var body: some View {
         Button(action: contentViewVM.startTimer)  {
