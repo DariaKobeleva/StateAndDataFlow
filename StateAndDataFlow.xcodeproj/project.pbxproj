@@ -15,6 +15,9 @@
 		20FBC1FE2BD6E73000FF7938 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FBC1FD2BD6E73000FF7938 /* LoginView.swift */; };
 		20FBC2002BD6E73E00FF7938 /* LoginViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FBC1FF2BD6E73E00FF7938 /* LoginViewViewModel.swift */; };
 		20FBC2022BD6EAB800FF7938 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FBC2012BD6EAB800FF7938 /* RootView.swift */; };
+		20FBC20C2BD92E0300FF7938 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FBC20B2BD92E0300FF7938 /* ButtonView.swift */; };
+		20FBC20E2BD96C6A00FF7938 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FBC20D2BD96C6A00FF7938 /* StorageManager.swift */; };
+		20FBC2112BD96CF500FF7938 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FBC2102BD96CF500FF7938 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		20FBC1FD2BD6E73000FF7938 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		20FBC1FF2BD6E73E00FF7938 /* LoginViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewViewModel.swift; sourceTree = "<group>"; };
 		20FBC2012BD6EAB800FF7938 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		20FBC20B2BD92E0300FF7938 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		20FBC20D2BD96C6A00FF7938 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		20FBC2102BD96CF500FF7938 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +65,15 @@
 		20FBC1EA2BD6DC7800FF7938 /* StateAndDataFlow */ = {
 			isa = PBXGroup;
 			children = (
-				20FBC1EB2BD6DC7800FF7938 /* StateAndDataFlowApp.swift */,
 				20FBC2012BD6EAB800FF7938 /* RootView.swift */,
-				20FBC1FC2BD6E71700FF7938 /* LoginView */,
+				20FBC1EB2BD6DC7800FF7938 /* StateAndDataFlowApp.swift */,
+				20FBC2132BD96D0500FF7938 /* UIViews */,
+				20FBC2122BD96CF900FF7938 /* Models */,
+				20FBC20F2BD96C7000FF7938 /* Services */,
 				20FBC1F92BD6DC9800FF7938 /* ContetntView */,
-				20FBC1EF2BD6DC7A00FF7938 /* Assets.xcassets */,
+				20FBC1FC2BD6E71700FF7938 /* LoginView */,
 				20FBC1F12BD6DC7A00FF7938 /* Preview Content */,
+				20FBC1EF2BD6DC7A00FF7938 /* Assets.xcassets */,
 			);
 			path = StateAndDataFlow;
 			sourceTree = "<group>";
@@ -93,6 +102,30 @@
 				20FBC1FF2BD6E73E00FF7938 /* LoginViewViewModel.swift */,
 			);
 			path = LoginView;
+			sourceTree = "<group>";
+		};
+		20FBC20F2BD96C7000FF7938 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				20FBC20D2BD96C6A00FF7938 /* StorageManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		20FBC2122BD96CF900FF7938 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				20FBC2102BD96CF500FF7938 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		20FBC2132BD96D0500FF7938 /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				20FBC20B2BD92E0300FF7938 /* ButtonView.swift */,
+			);
+			path = UIViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,7 +203,10 @@
 				20FBC2022BD6EAB800FF7938 /* RootView.swift in Sources */,
 				20FBC1EE2BD6DC7800FF7938 /* ContentView.swift in Sources */,
 				20FBC1FE2BD6E73000FF7938 /* LoginView.swift in Sources */,
+				20FBC2112BD96CF500FF7938 /* User.swift in Sources */,
 				20FBC1EC2BD6DC7800FF7938 /* StateAndDataFlowApp.swift in Sources */,
+				20FBC20C2BD92E0300FF7938 /* ButtonView.swift in Sources */,
+				20FBC20E2BD96C6A00FF7938 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
