@@ -10,7 +10,6 @@ import SwiftUI
 @main
 struct StateAndDataFlowApp: App {
     @StateObject private var loginViewVM = LoginViewViewModel()
-   // @State private var user = User(name: "", isLoggedIn: false)
     
     private var contentViewVM = ContentViewViewModel()
     
