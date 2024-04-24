@@ -8,20 +8,33 @@
 import SwiftUI
 
 final class LoginViewViewModel: ObservableObject {
+    private var storageManager = StorageManager.shared
     
-    @Published var name = ""
-    @Published var isLoggedIn = false
+    @Published var userName: String
+    @Published var isLoggedIn: Bool
     @Published var counter = 0
     
-    var isNameValid = false
+    init() {
+        let user = storageManager.loadUser()
+        userName = user.name
+        isLoggedIn = user.isLoggedIn
+    }
     
-    func validateUsername() {
-        isNameValid = name.count >= 3
+    var isNameValid: Bool {
+        userName.count >= 3
     }
     
     func login() {
-        if !name.isEmpty {
+        if isNameValid {
             isLoggedIn.toggle()
+            storageManager.saveUser(user: User(name: userName, isLoggedIn: true))
         }
     }
+    
+    func logout() {
+        isLoggedIn.toggle()
+        userName = ""
+        storageManager.deleteUser()
+    }
 }
+

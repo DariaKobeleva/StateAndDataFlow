@@ -13,11 +13,10 @@ struct LoginView: View {
     var body: some View {
         VStack {
             HStack {
-                TextField("Enter your name", text: $loginViewVM.name)
+                TextField("Enter your name", text: $loginViewVM.userName)
                     .multilineTextAlignment(.center)
-                    .onChange(of: loginViewVM.name) {
-                        loginViewVM.counter = loginViewVM.name.count
-                        loginViewVM.validateUsername()
+                    .onChange(of: loginViewVM.userName) {
+                        loginViewVM.counter = loginViewVM.userName.count
                     }
                 
                 Text(loginViewVM.counter.formatted())

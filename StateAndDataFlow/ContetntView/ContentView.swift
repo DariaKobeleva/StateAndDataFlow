@@ -14,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("Hi, \(loginViewVM.name)")
+            Text("Hi, \(loginViewVM.userName)")
                 .font(.title)
                 .padding(.top, 100)
             Text(contentViewVM.counter.formatted())
@@ -30,7 +30,7 @@ struct ContentView: View {
             Spacer()
             
             ButtonView(
-                action: {},
+                action: loginViewVM.logout,
                 text: "LogOut",
                 colorButton: .blue
             )

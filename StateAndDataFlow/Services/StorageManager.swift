@@ -7,22 +7,25 @@
 
 import SwiftUI
 
-final class StorageManager {
-//    static let shared = StorageManager()
-//    
-//    @AppStorage("name") var name: String = ""
-//    @AppStorage("isLoggedIn") var isLoggedIn: Bool = false
-//    
-//    func saveUser(user: User) {
-//           name = user.name
-//           isLoggedIn = user.isLoggedIn
-//       }
-//    
-//    func loadUser() -> User {
-//           User(name: name, isLoggedIn: isLoggedIn)
-//       }
-//    
-//    //TODO: Remove
-//    
-//    private init() {}
+final class StorageManager: ObservableObject {
+    static let shared = StorageManager()
+    
+    @AppStorage("name") var userName = ""
+    @AppStorage("isLoggedIn") var isLoggedIn = false
+    
+    func saveUser(user: User) {
+          userName = user.name
+          isLoggedIn = user.isLoggedIn
+      }
+      
+      func loadUser() -> User {
+          return User(name: userName, isLoggedIn: isLoggedIn)
+      }
+
+      func deleteUser() {
+          UserDefaults.standard.removeObject(forKey: "username")
+          UserDefaults.standard.removeObject(forKey: "isLoggedIn")
+      }
+    
+    private init() {}
 }
