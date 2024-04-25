@@ -13,19 +13,19 @@ final class StorageManager: ObservableObject {
     @AppStorage("name") var userName = ""
     @AppStorage("isLoggedIn") var isLoggedIn = false
     
-    func saveUser(user: User) {
-          userName = user.name
-          isLoggedIn = user.isLoggedIn
-      }
-      
-      func loadUser() -> User {
-          return User(name: userName, isLoggedIn: isLoggedIn)
-      }
-
-      func deleteUser() {
-          UserDefaults.standard.removeObject(forKey: "username")
-          UserDefaults.standard.removeObject(forKey: "isLoggedIn")
-      }
-    
     private init() {}
+    
+    func saveUser(user: User) {
+        userName = user.name
+        isLoggedIn = user.isLoggedIn
+    }
+    
+    func loadUser() -> User {
+        User(name: userName, isLoggedIn: isLoggedIn)
+    }
+    
+    func deleteUser() {
+        UserDefaults.standard.removeObject(forKey: "username")
+        UserDefaults.standard.removeObject(forKey: "isLoggedIn")
+    }
 }
