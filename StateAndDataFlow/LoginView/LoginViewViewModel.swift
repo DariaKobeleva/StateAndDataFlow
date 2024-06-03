@@ -10,9 +10,10 @@ import SwiftUI
 final class LoginViewViewModel: ObservableObject {
     private var storageManager = StorageManager.shared
     
+    @Published var user = User()
     @Published var userName: String
     @Published var isLoggedIn: Bool
-    @Published var counter = 0
+     var counter = 0
     
     init() {
         let user = storageManager.loadUser()
@@ -25,15 +26,13 @@ final class LoginViewViewModel: ObservableObject {
     }
     
     func login() {
-        if isNameValid {
-            isLoggedIn.toggle()
-            storageManager.saveUser(user: User(name: userName, isLoggedIn: true))
-        }
+        isLoggedIn.toggle()
+        storageManager.saveUser(user: User(name: userName, isLoggedIn: true))
     }
     
     func logout() {
-        isLoggedIn.toggle()
         userName = ""
+        isLoggedIn.toggle()
         storageManager.deleteUser()
     }
 }
