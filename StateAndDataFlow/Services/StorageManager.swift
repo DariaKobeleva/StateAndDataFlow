@@ -10,7 +10,7 @@ import SwiftUI
 final class StorageManager: ObservableObject {
     static let shared = StorageManager()
     
-    @AppStorage("name") var userName = ""
+    @AppStorage(wrappedValue: "", "name") var userName: String
     @AppStorage("isLoggedIn") var isLoggedIn = false
     
     private init() {}
